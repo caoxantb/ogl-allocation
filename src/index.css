@@ -1,0 +1,89 @@
+:root {
+  font-family: Nunito, system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #AD499B;
+  background-color: #FAE1FF;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  padding: 0 10%;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border: 1px solid transparent;
+  padding: 1em 2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #AD499B;
+  cursor: pointer;
+  transition: background-color 0.25s, border-color 0.25s, color 0.25s;
+}
+
+button:hover {
+  background-color: transparent;
+  border-color: #AD499B;
+  color: #AD499B;
+  cursor: pointer;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  transform: scale(1.5);
+  clip-path: inset(20% 0% 20% 0%);
+}
+
+input[type="text"] {
+  width: 16em;
+  border: 1px solid;
+  padding: 1em 2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  color: #AD499B;
+  transition: background-color 0.25s, border-color 0.25s, color 0.25s;
+  text-align: center;
+}
+
+input[type="text"]::placeholder {
+  color: rgba(173, 73, 155, 0.5);
+  text-align: center;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+  background-color: transparent;
+  border-color: #AD499B;
+  color: #AD499B;
+  outline: none;
+}
