@@ -42,7 +42,7 @@ const cleanData = (ogls) => {
   return cleanedOgls.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 };
 
-function computeStats(ogls) {
+const computeStats = (ogls) => {
   const total = ogls.length;
   const countG = { M: 0, F: 0 };
   const countP = { TC: 0, SN: 0, QT: 0, FS: 0, FC: 0 };
@@ -64,9 +64,9 @@ function computeStats(ogls) {
       K56: countCT.K56 / total,
     },
   };
-}
+};
 
-function scoreFamFit(famStat, famSize, ogl, globalStats) {
+const scoreFamFit = (famStat, famSize, ogl, globalStats) => {
   // Base score
   let score = 0 - famSize;
 
@@ -85,9 +85,9 @@ function scoreFamFit(famStat, famSize, ogl, globalStats) {
   });
 
   return score;
-}
+};
 
-function groupByClass(ogls) {
+const groupByClass = (ogls) => {
   const stats = ogls.reduce((acc, cur) => {
     const key = cur.class;
     acc[key] = (acc[key] || 0) + 1;
@@ -95,15 +95,15 @@ function groupByClass(ogls) {
   }, {});
 
   return stats;
-}
+};
 
-function assignOGLtoFam(ogl, famIdx, fams, famStat, classCountByFam) {
+const assignOGLtoFam = (ogl, famIdx, fams, famStat, classCountByFam) => {
   fams[famIdx].push(ogl);
   famStat[famIdx][ogl.gender]++;
   famStat[famIdx][ogl.personality]++;
   famStat[famIdx][ogl.classType]++;
   classCountByFam[famIdx][ogl.class]++;
-}
+};
 
 const calculateBestFams = (ogls, globalStats, numberOfFams, ogsPerFam) => {
   const rng = seedrandom("42");
@@ -237,7 +237,7 @@ const calculateBestFams = (ogls, globalStats, numberOfFams, ogsPerFam) => {
   return fams;
 };
 
-function assignOGs(fam, globalStats, ogsPerFam) {
+const assignOGs = (fam, globalStats, ogsPerFam) => {
   const ogs = Array.from({ length: ogsPerFam }, () => []);
   const classSets = Array.from({ length: ogsPerFam }, () => new Set());
   const ctCounts = Array.from({ length: ogsPerFam }, () => ({
@@ -303,7 +303,7 @@ function assignOGs(fam, globalStats, ogsPerFam) {
   });
 
   return ogs;
-}
+};
 
 export const parseOGL = (rawData, numberOfFams, ogsPerFam) => {
   const ogls = cleanData(rawData);
