@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Papa from "papaparse";
 import { useAtom, useSetAtom } from "jotai";
 import { oglData } from "../stores/data";
-import { parseOGL } from "../allocate";
+import { parseOGL } from "../allocation";
 import { formData } from "../stores/form";
 
 const Home = () => {
