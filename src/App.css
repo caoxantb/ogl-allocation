@@ -117,3 +117,10 @@
 .rotated-label-3 {
   color: #500064
 }
+
+.centered-wrapper img {
+  width: 200px;
+  height: 200px;
+  transform: scale(1.5);
+  clip-path: inset(20% 0% 20% 0%);
+}

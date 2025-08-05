@@ -55,13 +55,6 @@ button:hover {
   cursor: pointer;
 }
 
-img {
-  width: 200px;
-  height: 200px;
-  transform: scale(1.5);
-  clip-path: inset(20% 0% 20% 0%);
-}
-
 input[type="text"] {
   width: 16em;
   border: 1px solid;
